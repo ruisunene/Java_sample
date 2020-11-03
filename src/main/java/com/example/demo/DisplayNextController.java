@@ -1,0 +1,23 @@
+package com.example.demo;
+
+import javax.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
+
+@Controller
+@SessionAttributes("employeeInfo")
+public class DisplayNextController {
+    private static final Logger logger = LoggerFactory.getLogger(DisplayNextController.class);
+
+    @PostMapping("/display_next")
+    public String displayNext(@ModelAttribute("employeeInfo") EmployeeInfo employeeInfo, HttpSession httpSession) {
+        logger.info("employeeInfo =[{}]", employeeInfo.toString());
+        logger.info("Session info: " + httpSession.toString()); 
+        
+        return "display_next";
+    }
+}

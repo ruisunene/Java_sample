@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Spring-Session sample</title>
+  </head>
+  <body>
+    <h1>Spring-Session sample</h1>
+    <p>
+      Employee information.
+    </p>
+
+		<div>
+		    <form  th:action="@{/}" th:object="${employeeInfo}" method="get">
+		
+			    <div>
+			        <label>Name:</label>
+			        <span th:text="${employeeInfo.name}"></span>
+			    </div>
+			    <div>
+			        <label>gender:</label>
+			        <span th:text="${employeeInfo.gender}"></span>
+			    </div>
+			    <div>
+			        <label>department:</label>
+			        <span th:text="${employeeInfo.department}"></span>
+			    </div>
+			    <div>
+			        <label>title:</label>
+			        <span th:text="${employeeInfo.title}"></span>
+			    </div>
+			    <div>
+          			<button type="submit">back to the input form</button>
+        		</div>   
+		    </form>
+		</div>
+	</body>
+</html>
