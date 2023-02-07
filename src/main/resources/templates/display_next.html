@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>Spring-Session sample</title>
+    <title>javaサンプル</title>
   </head>
   <body>
-    <h1>Spring-Session sample</h1>
+    <h1>確認画面</h1>
     <p>
-      Employee information.
+      従業員情報
     </p>
 
 		<div>
 		    <form  th:action="@{/}" th:object="${employeeInfo}" method="get">
-		
+
 			    <div>
-			        <label>Name:</label>
+			        <label>名前:</label>
 			        <span th:text="${employeeInfo.name}"></span>
 			    </div>
 			    <div>
-			        <label>gender:</label>
+			        <label>性別:</label>
 			        <span th:text="${employeeInfo.gender}"></span>
 			    </div>
 			    <div>
-			        <label>department:</label>
+			        <label>部門:</label>
 			        <span th:text="${employeeInfo.department}"></span>
 			    </div>
 			    <div>
-			        <label>title:</label>
+			        <label>役職:</label>
 			        <span th:text="${employeeInfo.title}"></span>
 			    </div>
 			    <div>
-          			<button type="submit">back to the input form</button>
-        		</div>   
+          			<button type="submit">入力フォームへ</button>
+        		</div>
 		    </form>
 		</div>
 	</body>

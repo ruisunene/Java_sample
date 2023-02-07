@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>Spring-Session sample</title>
+    <title>Javaサンプル</title>
   </head>
   <body>
-    <h1>Spring-Session sample</h1>
+    <h1>入力フォーム</h1>
     <form  th:action="@{/display_info}" th:object="${employeeInfo}" method="post">
       <div>
         <div>
-          <label>Name:</label>
+          <label>名前:</label>
           <input type="text" th:field="*{name}"/>
         </div>
         <div>
-          <label>Gender:</label>
+          <label>性別:</label>
           <ul>
             <li th:each="gen: ${genders}">
               <input type="radio" th:field="*{gender}" th:value="${gen}"/>
@@ -22,7 +22,7 @@
           </ul>
         </div>
 	    <div>
-	        <label>Department:</label>
+	        <label>部門:</label>
 	        <select th:field="*{department}">
 	            <option th:each="dep: ${departments}"
 	                    th:value="${dep}"
@@ -31,7 +31,7 @@
 	        </select>
 	    </div>
 	    <div>
-	        <label>Title:</label>
+	        <label>役職:</label>
 	        <select th:field="*{title}">
 	            <option th:each="ttl: ${titles}"
 	                    th:value="${ttl}"
@@ -40,7 +40,7 @@
 	        </select>
 	    </div>
         <div>
-          <button type="submit">next</button>
+          <button type="submit">確認画面へ</button>
         </div>
       </div>
     </form>

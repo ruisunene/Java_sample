@@ -16,7 +16,7 @@ public class DisplayInfoController {
     @PostMapping("/display_info")
     public String displayInfo(@ModelAttribute("employeeInfo") EmployeeInfo employeeInfo, HttpSession httpSession) {
         logger.info("employeeInfo =[{}]", employeeInfo.toString());
-        logger.info("Session info: " + httpSession.toString()); 
+        logger.info("Session info: " + httpSession.toString());
         httpSession.invalidate();
         return "display_info";
     }

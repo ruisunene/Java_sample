@@ -25,23 +25,23 @@ public class HomeController {
 
     @ModelAttribute("genders")
     public List<String> genders() {
-        return Arrays.asList("male", "female");
+        return Arrays.asList("男性", "女性");
     }
-    
+
     @ModelAttribute("departments")
     public List<String> departments() {
-        return Arrays.asList("IT", "Sales", "Marketing", "HR" ,"R&D" ,"Other" );
+        return Arrays.asList("IT", "販売", "マーケティング", "人事" ,"研究開発" ,"その他" );
     }
 
     @ModelAttribute("titles")
     public List<String> titles() {
-        return Arrays.asList("Director" ,"Manager" ,"Deputy manager" , "Assistant Manager" ,"Other" );
+        return Arrays.asList("ディレクター" ,"マネージャー" ,"サブマネージャー" , "マネージャー補佐" ,"その他" );
     }
 
     @RequestMapping(value = "/" ,method = RequestMethod.GET )
     public String home(HttpSession httpSession, @ModelAttribute("employeeInfo") EmployeeInfo employeeInfo) {
         logger.info("start home method");
-        logger.info("Session ID: " + httpSession.getId()); 
+        logger.info("Session ID: " + httpSession.getId());
         logger.info("employeeInfo =[{}]", employeeInfo.toString());
 
         return "/input.html";
